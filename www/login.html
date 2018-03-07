@@ -1,0 +1,69 @@
+<!-- Top Navbar-->
+<div class="navbar">
+<div class="navbar-inner">
+<div class="left">
+<a href="#" class="back link">
+<i class="icon icon-back"></i>
+<span>Back</span>
+</a>
+</div>
+<div class="center sliding">Log In</div>
+<div class="right">
+<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+</div>
+</div>
+</div>
+<div class="pages">
+  <div class="page" data-page="login">
+    <div class="page-content">
+      <div class="content-block">
+           <div class="login-screen-title">Framework7</div>
+                <form>
+                  <div class="list">
+                    <ul>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Username</div>
+                          <div class="item-input-wrap">
+                            <input type="text" name="username" id="demo-username-1" placeholder="Your username">
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Password</div>
+                          <div class="item-input-wrap">
+                            <input type="password" name="password" id="demo-password-1" placeholder="Your password">
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list">
+                    <ul>
+                      <li><a href="#" class="item-link list-button" @click="signIn">Sign In</a></li>
+                    </ul>
+                    <div class="block-footer">Some text about login information.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                  </div>
+                </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  return {
+    methods: {
+      signIn: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var username = $('input#demo-username-1').val();
+        var password = $('input#demo-password-1').val();
+        app.dialog.alert('Username: ' + username + '<br>Password: ' + password, function () {
+          app.loginScreen.close();
+        })
+      }
+    }
+  }
+</script>
