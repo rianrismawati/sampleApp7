@@ -1,2 +1,0 @@
-# sampleApp7
-bismillah
